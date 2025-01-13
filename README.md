@@ -7,5 +7,7 @@ During the last meeting BSCS ID Team was asked to create a Website / Portal that
 Developers: 
 
 Nati, Eli Jay P.
+
 Olivo, Andre John
+
 Visitacion, Ven Johnson T.
