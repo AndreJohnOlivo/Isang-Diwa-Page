@@ -3,15 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision, Mission, Core Values & Philosophy</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Isang Diwa</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap">
 </head>
+<style>
+    body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            flex-flow: column;
+            justify-content: flex-start;
+            align-items: stretch;
+        }
+    header {
+            background: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: rgb(0, 0, 0);
+            margin: 4px;
+            transition: 0.4s;
+        }
+    .header-left img {
+            width: 140px; /* Set image width */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 15px; /* Space between images */
+            vertical-align: middle; /* Align images vertically */
+        }
+</style>
+<script>
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+
+    function toggleMenu() {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        menuIcon.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.menu-icon').addEventListener('click', toggleMenu);
+        document.getElementById('vision-mission-link').addEventListener('click', function() {
+            navigateTo('missionVision.html');
+        });
+        document.getElementById('newsletter-form-link').addEventListener('click', function() {
+            navigateTo('newsletterApplication.html');
+        });
+        document.getElementById('newsletter-archive-link').addEventListener('click', function() {
+            navigateTo('newspaperArchive.html');
+        });
+        document.getElementById('about-us-link').addEventListener('click', function() {
+            navigateTo('aboutUs.html');
+        });
+        document.getElementById('contact-us-link').addEventListener('click', function() {
+            navigateTo('contactUs.html');
+        });
+        document.getElementById('privacy-policy-link').addEventListener('click', function() {
+            navigateTo('privacyPolicy.html');
+        });
+        document.getElementById('feedback-link').addEventListener('click', function() {
+            navigateTo('feedback.html');
+        });
+        document.getElementById('makata-series-link').addEventListener('click', function() {
+            navigateTo('makataSeries.html');
+        });
+        document.getElementById('poet-series-link').addEventListener('click', function() {
+            navigateTo('poetSeries.html');
+        });
+    });
+</script>
+
 <body>
+    <header>
+        <div class="header-left">
+            <img src="Isang Diwa Pictures/Secondary_logo.png" alt="UCC Logo">
+            <img src="Isang Diwa Pictures/UCC_collegedept_logo.png" alt="College Department Logo">
+            <img src="Isang Diwa Pictures/Isang_diwa.png" alt="Isang Diwa Logo">
+            <h1>Isang Diwa - Your Story, Your Voice</h1>
+        </div>
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#" id="vision-mission-link">Vision, Mission, Core Values & Philosophy</a></li>
+            <li><a href="#" id="newsletter-form-link">Newsletter Application Form</a></li>
+            <li><a href="#" id="newsletter-archive-link">Newsletter Archive</a></li>
+            <li><a href="#" id="makata-series-link">Makata Series</a></li>
+            <li><a href="#" id="poet-series-link">Poet Series</a></li>
+            <li><a href="#" id="feedback-link">Feedback</a></li>
+            <li><a href="#" id="about-us-link">About Us</a></li>
+            <li><a href="#" id="privacy-policy-link">Privacy Policy</a></li>
+            <li><a href="#" id="contact-us-link">Contact Us</a></li>
+        </ul>
+    </nav>
     <header>
         <h1>Vision, Mission, Core Values & Philosophy</h1>
     </header>
     <section>
-        <p>[Insert Vision, Mission, Core Values & Philosophy]</p>
+        <h2>Mission</h2>
+        <p> To be the most loved and admired Christian educational institution in the Philippines in 2050.
+        
+        <h2>Vision</h2>    
+        <p>Instill knowledge and Christian values in achieving academic excellence and developing globally competitive leaders who will contribute significant impact to society.</p>
+        
+        <h2>Core Values</h2>
+
+        <h3>Live with Faith</h3>
+        <p></p>
+
+        <h3>Pursue excellence</h3>
+        <p></p>
+
+        <h3>Growth Mindset</h3>
+        <p></p>
+
+        <h3>Serve</h3>
+        <p></p>
+
+        <h3>Make a difference</h3>
+        <p></p>
     </section>
     <footer>
         <p>&copy; 2025 Isang Diwa. All rights reserved.</p>
