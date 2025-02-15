@@ -10,16 +10,19 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #fbfae2;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         header {
-            background: #ffffff;
-            color: rgb(0, 0, 0);
+            background: #1d4d29;
+            color: #fff;
             padding: 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            -webkit-text-size-adjust: 100%;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .header-left {
@@ -27,27 +30,42 @@
             align-items: center;
         }
 
-        .header-left img {
-            width: 140px; /* Set image width */
-            height: auto; /* Maintain aspect ratio */
-            margin-right: 15px; /* Space between images */
-            vertical-align: middle; /* Align images vertically */
+        .header-left img,
+        .header-right img {
+            width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .header-right img {
+            margin-left: 15px;
         }
 
         h1 {
-            margin-left: 30px; /* Space between images and title */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            cursor: pointer; /* Make the text clickable */
+            transition: color 0.4s;
+        }
+
+        h1:hover {
+            color: gold; /* Change color on hover */
         }
 
         .menu-icon {
             display: flex;
             flex-direction: column;
             cursor: pointer;
+            margin-right: 15px;
         }
 
         .menu-icon div {
             width: 25px;
             height: 3px;
-            background-color: rgb(0, 0, 0);
+            background-color: #000;
             margin: 4px;
             transition: 0.4s;
         }
@@ -60,7 +78,7 @@
             background: #98862a;
             margin: 0;
             width: 100%;
-            display: none; /* Initially hidden */
+            display: none;
         }
 
         nav ul li {
@@ -79,7 +97,7 @@
         }
 
         .nav-links.active {
-            display: flex; /* Show menu when active */
+            display: flex;
         }
 
         .menu-icon.active div:nth-child(1) {
@@ -97,52 +115,122 @@
         section {
             padding: 2rem;
             border-bottom: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            text-align: center; /* Center the content */
         }
 
         footer {
-            background: #275e39;
+            background: #1d4d29;
             color: white;
             text-align: center;
             padding: 1rem;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-        }
-
-        .social-media a {
-            color: white;
-            margin: 0 0.5rem;
-            text-decoration: none;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
         }
 
         form {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: auto;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group {
             display: flex;
             flex-direction: column;
-            max-width: 500px;
-            margin: auto;
+            align-items: flex-start; /* Align to the left */
         }
 
-        form input, form textarea {
-            margin-bottom: 1rem;
-            padding: 0.5rem;
+        label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            padding: 0.8rem;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            width: 100%;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        form input[type="submit"] {
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #98862a;
+            box-shadow: 0 0 5px rgba(152, 134, 42, 0.7);
+        }
+
+        input[type="submit"] {
             background: #98862a;
             color: white;
             border: none;
-            padding: 0.75rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            border-radius: 6px;
             cursor: pointer;
-            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            align-self: center;
         }
 
-        form input[type="submit"]:hover {
-            background: #003399;
+        input[type="submit"]:hover {
+            background-color: #003399;
         }
+
+        textarea {
+            resize: none;
+            min-height: 150px;
+            font-size: 1rem;
+        }
+
+        input::placeholder, textarea::placeholder {
+            font-style: italic;
+            color: #888;
+        }
+
+        /* Additional spacing and layout improvement */
+        section {
+            margin: 2rem 0;
+        }
+
+        #newspaper-archive, #contact-us, #privacy-policy {
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #newspaper-archive h2, #contact-us h2, #privacy-policy h2 {
+            color: #1d4d29;
+        }
+
+        /* Additional styling for the feedback form */
+        form .form-group input[type="text"], form .form-group input[type="email"] {
+            font-size: 1.1rem;
+            padding: 0.9rem;
+        }
+
+        /* Footer text */
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Feedback section */
+        #feedback h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        #feedback p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
     </style>
     <script>
         function navigateTo(page) {
@@ -164,7 +252,7 @@
             document.getElementById('newsletter-form-link').addEventListener('click', function() {
                 navigateTo('newsletterApplication.html');
             });
-            document.getElementById('newsletter-archive-link').addEventListener('click', function() {
+            document.getElementById('newspaper-archive-link').addEventListener('click', function() {
                 navigateTo('newspaperArchive.html');
             });
             document.getElementById('about-us-link').addEventListener('click', function() {
@@ -185,16 +273,21 @@
             document.getElementById('poet-series-link').addEventListener('click', function() {
                 navigateTo('poetSeries.html');
             });
+            document.querySelector('h1').addEventListener('click', function() {
+                navigateTo('Main.html');
+            });
         });
     </script>
 </head>
 <body>
     <header>
         <div class="header-left">
-            <img src="Isang Diwa Pictures/Secondary_logo.png" alt="UCC Logo">
-            <img src="Isang Diwa Pictures/UCC_collegedept_logo.png" alt="College Department Logo">
-            <img src="Isang Diwa Pictures/Isang_diwa.png" alt="Isang Diwa Logo">
-            <h1>Isang Diwa - Your Story, Your Voice</h1>
+            <img src="images/UCC_collegedept_logo.png" alt="College Department Logo">
+            <img src="images/Secondary_logo.png" alt="UCC Logo">
+        </div>
+        <h1>Isang Diwa - Your Story, Your Voice</h1>
+        <div class="header-right">
+            <img src="images/Isang_diwa.png" alt="Isang Diwa Logo">
         </div>
         <div class="menu-icon">
             <div></div>
@@ -207,7 +300,7 @@
         <ul class="nav-links">
             <li><a href="#" id="vision-mission-link">Vision, Mission, Core Values & Philosophy</a></li>
             <li><a href="#" id="newsletter-form-link">Newsletter Application Form</a></li>
-            <li><a href="#" id="newsletter-archive-link">Newsletter Archive</a></li>
+            <li><a href="#" id="newspaper-archive-link">Newspaper Archive</a></li>
             <li><a href="#" id="makata-series-link">Makata Series</a></li>
             <li><a href="#" id="poet-series-link">Poet Series</a></li>
             <li><a href="#" id="feedback-link">Feedback</a></li>
@@ -216,15 +309,16 @@
             <li><a href="#" id="contact-us-link">Contact Us</a></li>
         </ul>
     </nav>
-    <section id="newsletter-archive">
-        <h2>Newsletter Archive</h2>
+
+    <section id="newspaper-archive">
+        <h2>Newspaper Archive</h2>
         <p>[Links to past issues]</p>
     </section>
 
     <section id="contact-us">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61565923967277" target="_blank">Facebook Page - Isang Diwa</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61565923967277" target="_blank"> Isang Diwa Facebook Page</a></p>
     </section>
 
     <section id="privacy-policy">
@@ -234,19 +328,24 @@
 
     <section id="feedback">
         <h2>Feedback</h2>
+        <p>We value your thoughts and opinions! Share your feedback with us.</p>
         <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="feedback">Your Feedback:</label>
-            <textarea id="feedback" name="feedback" rows="4" required></textarea>
-
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Feedback</label>
+                <textarea id="message" name="message" required placeholder="Your feedback here..."></textarea>
+            </div>
             <input type="submit" value="Submit">
         </form>
     </section>
+
     <footer>
         <p>&copy; 2025 Isang Diwa. All rights reserved.</p>
     </footer>
