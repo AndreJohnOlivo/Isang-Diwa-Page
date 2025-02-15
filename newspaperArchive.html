@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Archive</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fbfae2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            color: #333; /* Improved text color for better readability */
+        }
+
+        header {
+            background: #1d4d29;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left img,
+        .header-right img {
+            width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .header-right img {
+            margin-left: 15px;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-weight: 600; /* Improved font weight */
+            cursor: pointer; /* Make the text clickable */
+            transition: color 0.4s;
+        }
+
+        h1:hover {
+            color: gold; /* Change color on hover */
+        }
+
+        h2 {
+            color: #1d4d29;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            background: #275e39; /* Darker green for a distinct header look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: #98862a;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+        }
+
+        nav ul li {
+            margin: 1rem;
+            text-align: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        nav ul li a:hover {
+            color: #27ae60; /* Change color to green on hover */
+        }
+
+        section {
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+        }
+
+        section form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 1rem;
+            color: #275e39;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            font-size: 1rem; /* Improved font size */
+        }
+
+        input[type="submit"] {
+            background: #275e39;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+            align-self: center;
+            font-size: 1rem; /* Improved font size */
+            transition: background 0.3s ease; /* Smooth transition for background change */
+        }
+
+        input[type="submit"]:hover {
+            background: #9c870b;
+        }
+
+        a {
+            color: #275e39;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        a:hover {
+            color: #27ae60; /* Change color to green on hover */
+        }
+
+        footer {
+            background: #1d4d29;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+        }
+    </style>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('newsletter-form-link').addEventListener('click', function() {
+                navigateTo('newsletterApplication.html');
+            });
+            document.getElementById('vision-mission-link').addEventListener('click', function() {
+                navigateTo('missionVision.html');
+            });
+            document.getElementById('about-us-link').addEventListener('click', function() {
+                navigateTo('aboutUs.html');
+            });
+            document.getElementById('contact-us-link').addEventListener('click', function() {
+                navigateTo('contactUs.html');
+            });
+            document.getElementById('privacy-policy-link').addEventListener('click', function() {
+                navigateTo('privacyPolicy.html');
+            });
+            document.getElementById('feedback-link').addEventListener('click', function() {
+                navigateTo('feedback.html');
+            });
+            document.getElementById('makata-series-link').addEventListener('click', function() {
+                navigateTo('makataSeries.html');
+            });
+            document.getElementById('poet-series-link').addEventListener('click', function() {
+                navigateTo('poetSeries.html');
+            });
+            document.querySelector('h1').addEventListener('click', function() {
+                navigateTo('Main.html');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/UCC_collegedept_logo.png" alt="College Department Logo">
+            <img src="images/Secondary_logo.png" alt="UCC Logo">
+        </div>
+        <h1>Isang Diwa - Your Story, Your Voice</h1>
+        <div class="header-right">
+            <img src="images/Isang_diwa.png" alt="Isang Diwa Logo">
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#" id="vision-mission-link">Vision, Mission, Core Values & Philosophy</a></li>
+            <li><a href="#" id="newsletter-form-link">Newsletter Application Form</a></li>
+            <li><a href="#" id="makata-series-link">Makata Series</a></li>
+            <li><a href="#" id="poet-series-link">Poet Series</a></li>
+            <li><a href="#" id="feedback-link">Feedback</a></li>
+            <li><a href="#" id="about-us-link">About Us</a></li>
+            <li><a href="#" id="privacy-policy-link">Privacy Policy</a></li>
+            <li><a href="#" id="contact-us-link">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Newspaper Archive</h2>
+        <form>
+            <!-- Newspaper Archive Content -->
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Isang Diwa. All rights reserved.</p>
+    </footer>
+</body>
+</html>
