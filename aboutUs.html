@@ -4,33 +4,281 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fbfae2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1d4d29;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-left, .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left img,
+        .header-right img {
+            width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .header-right img {
+            margin-left: 15px;
+        }
+
+        footer {
+            background: #1d4d29;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.4s;
+        }
+
+        h1:hover {
+            color: gold;
+        }
+
+        h2 {
+            color: #1d4d29;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: #275e39;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: #98862a;
+        }
+
+        nav ul li {
+            margin: 1rem;
+            text-align: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #27ae60;
+        }
+
+        section {
+            width: 90%;
+            padding: 2rem;
+            margin: 20px 0;
+            background: transparent; /* Removed white background */
+            border: none; /* Removed border */
+            box-shadow: none; /* Removed box-shadow */
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #1d4d29;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #1d4d29;
+            margin: 5px 0;
+        }
+
+        .role-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .team-list {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #275e39;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #27ae60;
+        }
+
+        @media screen and (max-width: 768px) {
+            section {
+                padding: 1rem;
+            }
+
+            footer {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = [
+                { id: 'newsletter-form-link', url: 'newsletterApplication.html' },
+                { id: 'newspaper-archive-link', url: 'newspaperArchive.html' },
+                { id: 'about-us-link', url: 'aboutUs.html' },
+                { id: 'contact-us-link', url: 'contactUs.html' },
+                { id: 'privacy-policy-link', url: 'privacyPolicy.html' },
+                { id: 'feedback-link', url: 'feedback.html' },
+                { id: 'makata-series-link', url: 'makataSeries.html' },
+                { id: 'poet-series-link', url: 'poetSeries.html' },
+                { id: 'vision-mission-link', url: 'missionVision.html' }
+            ];
+
+            links.forEach(link => {
+                const element = document.getElementById(link.id);
+                if (element) {
+                    element.addEventListener('click', function() {
+                        navigateTo(link.url);
+                    });
+                }
+            });
+
+            document.querySelector('h1').addEventListener('click', function() {
+                navigateTo('Main.html');
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
-        <h1>About Us</h1>
+        <div class="header-left">
+            <img src="images/UCC_collegedept_logo.png" alt="College Department Logo">
+            <img src="images/Secondary_logo.png" alt="UCC Logo">
+        </div>
+        <h1>Isang Diwa - Your Story, Your Voice</h1>
+        <div class="header-right">
+            <img src="images/Isang_diwa.png" alt="Isang Diwa Logo">
+        </div>
     </header>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#" id="vision-mission-link">Vision, Mission, Core Values & Philosophy</a></li>
+            <li><a href="#" id="newspaper-archive-link">Newspaper Archive</a></li>
+            <li><a href="#" id="newsletter-form-link">Newsletter Application Form</a></li>
+            <li><a href="#" id="makata-series-link">Makata Series</a></li>
+            <li><a href="#" id="poet-series-link">Poet Series</a></li>
+            <li><a href="#" id="feedback-link">Feedback</a></li>
+            <li><a href="#" id="privacy-policy-link">Privacy Policy</a></li>
+            <li><a href="#" id="contact-us-link">Contact Us</a></li>
+        </ul>
+    </nav>
+
     <section>
-        <p>
-            Editor-in-Chief: Dianne Christine C. Suyom<br>
-            Associate Editor: Sophia P. Pakinggan<br>
-            Manegerial Editor: Aira Jassen L. Maluyo<br>
-            Social Media Managers:
-            <ul>
-                <li>Aurelia June Y. Viazon</li>
-                <li>Welres Temporaza</li>
-                <li>Apreal Rose Malte</li>
-            </ul>
-            Editorial Cartoonist: Rica Mai A. Laurilla<br>
-            Writer: Ayesha Margarette Sarmiento<br>
-            Reporter: Andre John Olivo<br>
-            Layout Editors:
-            <ul>
-                <li>Eli Jay P. Nati</li>
-                <li>Ven Johnson Visitacion</li>
-            </ul>
-        </p>
+        <h2>About Us</h2>
+
+        <div class="role-title">Editor-in-Chief</div>
+        <p>Dianne Christine C. Suyom</p>
+
+        <div class="role-title">Associate Editor</div>
+        <p>Sophia P. Pakinggan</p>
+
+        <div class="role-title">Managerial Editor</div>
+        <p>Aira Jassen L. Maluyo</p>
+
+        <div class="role-title">Social Media Managers</div>
+        <ul class="team-list">
+            <li>Aurelia June Y. Viazon</li>
+            <li>Welres Temporaza</li>
+            <li>Apreal Rose Malte</li>
+        </ul>
+
+        <div class="role-title">Editorial Cartoonist</div>
+        <p>Rica Mai A. Laurilla</p>
+
+        <div class="role-title">Writers</div>
+        <ul class="team-list">
+            <li>Ayesha Margarette Sarmiento</li>
+            <li>Nikki Nazaire</li>
+            <li>Sonny Ederson Bautista</li>
+        </ul>
+
+        <div class="role-title">Writers/Reporters</div>
+        <ul class="team-list">
+            <li>Andre John Olivo</li>
+            <li>Brennan Crisolo</li>
+        </ul>
+
+        <div class="role-title">Layout Editors</div>
+        <ul class="team-list">
+            <li>Eli Jay P. Nati</li>
+            <li>Ven Johnson T. Visitacion</li>
+        </ul>
+
+        <div class="role-title">Photojournalists</div>
+        <ul class="team-list">
+            <li>Jonel Christian M. Diato</li>
+            <li>Jefferson C. Vertuso</li>
+            <li>Arabela Bandal</li>
+        </ul>
+
     </section>
+
     <footer>
         <p>&copy; 2025 Isang Diwa. All rights reserved.</p>
     </footer>
