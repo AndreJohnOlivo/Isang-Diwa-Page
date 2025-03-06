@@ -113,9 +113,9 @@
             width: 90%;
             padding: 2rem;
             margin: 20px 0;
-            background: transparent; /* Removed white background */
-            border: none; /* Removed border */
-            box-shadow: none; /* Removed box-shadow */
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
 
         section:last-of-type {
@@ -161,6 +161,37 @@
             color: #27ae60;
         }
 
+        /* New styles for About Us section */
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .team-member-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-member-info p {
+            margin: 0;
+            font-size: 1rem;
+            color: #1d4d29;
+        }
+
+        .team-member-info .role-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
         @media screen and (max-width: 768px) {
             section {
                 padding: 1rem;
@@ -168,6 +199,15 @@
 
             footer {
                 padding: 1rem;
+            }
+
+            .team-member {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .team-member img {
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -232,50 +272,135 @@
     <section>
         <h2>About Us</h2>
 
-        <div class="role-title">Editor-in-Chief</div>
-        <p>Dianne Christine C. Suyom</p>
+        <div class="team-member">
+            <img src="images/editor-in-chief.jpg" alt="Dianne Christine C. Suyom">
+            <div class="team-member-info">
+                <div class="role-title">Editor-in-Chief</div>
+                <p>Dianne Christine C. Suyom</p>
+            </div>
+        </div>
 
-        <div class="role-title">Associate Editor</div>
-        <p>Sophia P. Pakinggan</p>
+        <div class="team-member">
+            <img src="images/associate-editor.jpg" alt="Sophia P. Pakinggan">
+            <div class="team-member-info">
+                <div class="role-title">Associate Editor</div>
+                <p>Sophia P. Pakinggan</p>
+            </div>
+        </div>
 
-        <div class="role-title">Managerial Editor</div>
-        <p>Aira Jassen L. Maluyo</p>
+        <div class="team-member">
+            <img src="images/managerial-editor.jpg" alt="Aira Jassen L. Maluyo">
+            <div class="team-member-info">
+                <div class="role-title">Managerial Editor</div>
+                <p>Aira Jassen L. Maluyo</p>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <img src="images/editorial-cartoonist.jpg" alt="Rica Mai A. Laurilla">
+            <div class="team-member-info">
+                <div class="role-title">Editorial Cartoonist</div>
+                <p>Rica Mai A. Laurilla</p>
+            </div>
+        </div>       
 
         <div class="role-title">Social Media Managers</div>
-        <ul class="team-list">
-            <li>Aurelia June Y. Viazon</li>
-            <li>Welres Temporaza</li>
-            <li>Apreal Rose Malte</li>
-        </ul>
-
-        <div class="role-title">Editorial Cartoonist</div>
-        <p>Rica Mai A. Laurilla</p>
+        <div class="team-list">
+            <div class="team-member">
+                <img src="images/aurelia-june.jpg" alt="Aurelia June Y. Viazon">
+                <div class="team-member-info">
+                    <p>Aurelia June Y. Viazon</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/welres-temporaza.jpg" alt="Welres Temporaza">
+                <div class="team-member-info">
+                    <p>Welres Temporaza</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/apreal-rose.jpg" alt="Apreal Rose Malte">
+                <div class="team-member-info">
+                    <p>Apreal Rose Malte</p>
+                </div>
+            </div>
+        </div>
 
         <div class="role-title">Writers</div>
-        <ul class="team-list">
-            <li>Ayesha Margarette Sarmiento</li>
-            <li>Nikki Nazaire</li>
-            <li>Sonny Ederson Bautista</li>
-        </ul>
+        <div class="team-list">
+            <div class="team-member">
+                <img src="images/ayesha-margarette.jpg" alt="Ayesha Margarette Sarmiento">
+                <div class="team-member-info">
+                    <p>Ayesha Margarette Sarmiento</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/nikki-nazaire.jpg" alt="Nikki Nazaire">
+                <div class="team-member-info">
+                    <p>Nikki Nazaire</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/sonny-ederson.jpg" alt="Sonny Ederson Bautista">
+                <div class="team-member-info">
+                    <p>Sonny Ederson Bautista</p>
+                </div>
+            </div>
+        </div>
 
         <div class="role-title">Writers/Reporters</div>
-        <ul class="team-list">
-            <li>Andre John Olivo</li>
-            <li>Brennan Crisolo</li>
-        </ul>
+        <div class="team-list">
+            <div class="team-member">
+                <img src="images/ID_Andre_AboutUs.jpg" alt="Andre John Olivo">
+                <div class="team-member-info">
+                    <p>Andre John Olivo</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/brennan-crisolo.jpg" alt="Brennan Crisolo">
+                <div class="team-member-info">
+                    <p>Brennan Crisolo</p>
+                </div>
+            </div>
+        </div>
 
         <div class="role-title">Layout Editors</div>
-        <ul class="team-list">
-            <li>Eli Jay P. Nati</li>
-            <li>Ven Johnson T. Visitacion</li>
-        </ul>
+        <div class="team-list">
+            <div class="team-member">
+                <img src="images/ID_EJ_AboutUs.jpg" alt="Eli Jay P. Nati">
+                <div class="team-member-info">
+                    <p>Eli Jay P. Nati</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/ID_Ven_AboutUs.jpg" alt="Ven Johnson T. Visitacion">
+                <div class="team-member-info">
+                    <p>Ven Johnson T. Visitacion</p>
+                </div>
+            </div>
+        </div>
 
         <div class="role-title">Photojournalists</div>
-        <ul class="team-list">
-            <li>Jonel Christian M. Diato</li>
-            <li>Jefferson C. Vertuso</li>
-            <li>Arabela Bandal</li>
-        </ul>
+        <div class="team-list">
+            <div class="team-member">
+                <img src="images/jonel-christian.jpg" alt="Jonel Christian M. Diato">
+                <div class="team-member-info">
+                    <p>Jonel Christian M. Diato</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/jefferson.jpg" alt="Jefferson C. Vertuso">
+                <div class="team-member-info">
+                    <p>Jefferson C. Vertuso</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/arabela-bandal.jpg" alt="Arabela Bandal">
+                <div class="team-member-info">
+                    <p>Arabela Bandal</p>
+                </div>
+            </div>
+        </div>
 
     </section>
 
