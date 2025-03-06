@@ -179,8 +179,84 @@
             width: 100%;
             box-sizing: border-box; /* Ensure padding doesn't exceed the width */
         }
+
+        #slideshow-container {
+            position: relative;
+            width: 30%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border: none;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        #full-screen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #full-screen-modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        #full-screen-modal span {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
     </style>
     <script>
+        
+
         function navigateTo(page) {
             window.location.href = page;
         }
@@ -214,6 +290,8 @@
                 navigateTo('Main.html');
             });
         });
+
+
     </script>
 </head>
 <body>
@@ -242,14 +320,129 @@
     </nav>
 
     <section>
-        <h2>Newspaper Archive</h2>
-        <form>
-            <!-- Newspaper Archive Content -->
-        </form>
+        <section>
+            <h2>Newspaper Archive</h2>
+            <div id="slideshow-container">
+                <!-- Slideshow -->
+                <div class="slides">
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic1.png" alt="Newspaper 1">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic2.png" alt="Newspaper 2">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic3.png" alt="Newspaper 3">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic4.png" alt="Newspaper 4">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic5.png" alt="Newspaper 5">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic6.png" alt="Newspaper 7">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic7.png" alt="Newspaper 7">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic8.png" alt="Newspaper 8">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic9.png" alt="Newspaper 9">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic10.png" alt="Newspaper 10">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic11.png" alt="Newspaper 11">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic12.png" alt="Newspaper 12">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic13.png" alt="Newspaper 13">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic14.png" alt="Newspaper 14">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic15.png" alt="Newspaper 15">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic16.png" alt="Newspaper 16">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic17.png" alt="Newspaper 17">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic18.png" alt="Newspaper 18">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic19.png" alt="Newspaper 19">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic20.png" alt="Newspaper 20">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic21.png" alt="Newspaper 21">
+                    </div>
+                    <div class="slide">
+                        <img src="images/ID_1st_Issue_Pic22.png" alt="Newspaper 22">
+                    </div>
+                </div>
+        
+                <!-- Previous and Next buttons -->
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+    
+            <!-- Full-screen Modal -->
+            <div id="full-screen-modal">
+                <span onclick="closeFullScreen()">&times;</span>
+                <img id="full-screen-image" src="" alt="Full Screen Image">
+            </div>
+        </section>
     </section>
 
     <footer>
         <p>&copy; 2025 Isang Diwa. All rights reserved.</p>
     </footer>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const modal = document.getElementById("full-screen-modal");
+        const fullScreenImage = document.getElementById("full-screen-image");
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlideIndex = 0;
+            if (index < 0) currentSlideIndex = slides.length - 1;
+            document.querySelector('.slides').style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+        }
+
+        function moveSlide(direction) {
+            currentSlideIndex += direction;
+            showSlide(currentSlideIndex);
+        }
+
+        // Open the image in full-screen when clicked
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', function() {
+                fullScreenImage.src = slide.querySelector("img").src;
+                modal.style.display = "flex";
+            });
+        });
+
+        // Close the full-screen modal
+        function closeFullScreen() {
+            modal.style.display = "none";
+        }
+
+        // Initialize slideshow
+        showSlide(currentSlideIndex);
+    </script>
+
 </body>
 </html>
