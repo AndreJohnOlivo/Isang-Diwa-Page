@@ -45,32 +45,42 @@
             margin-left: 15px;
         }
 
+        footer {
+            background: #1d4d29;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
         h1 {
             color: white;
             text-align: center;
             padding: 10px;
             margin: 10px 0;
             width: 100%;
-            font-weight: 600; /* Improved font weight */
-            cursor: pointer; /* Make the text clickable */
+            font-weight: 600;
+            cursor: pointer;
             transition: color 0.4s;
         }
 
         h1:hover {
-            color: gold; /* Change color on hover */
+            color: gold;
         }
 
         h2 {
             color: #1d4d29;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
         nav {
-            background: #275e39; /* Darker green for a distinct header look */
+            background: #275e39;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            box-sizing: border-box;
         }
 
         nav ul {
@@ -82,7 +92,7 @@
             flex-wrap: wrap;
             background: #98862a;
             width: 100%;
-            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            box-sizing: border-box;
         }
 
         nav ul li {
@@ -94,46 +104,56 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease; /* Smooth transition for color change */
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #27ae60; /* Change color to green on hover */
+            color: #27ae60;
         }
 
         section {
             width: 100%;
+            max-width: 800px;
             padding: 2rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            box-sizing: border-box;
         }
 
         section p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
         }
 
-        a {
+        section a {
             color: #275e39;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease; /* Smooth transition for color change */
+            transition: color 0.3s ease;
         }
 
-        a:hover {
-            color: #27ae60; /* Change color to green on hover */
+        section a:hover {
+            color: #27ae60;
         }
 
         footer {
-            background: #1d4d29;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            width: 100%;
-            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            margin-top: 2rem;
+        }
+
+        /* Mobile responsive design */
+        @media (max-width: 768px) {
+            section {
+                width: 90%;
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
     <script>
@@ -180,7 +200,6 @@
             <img src="images/Isang_diwa.png" alt="Isang Diwa Logo">
         </div>
     </header>
-
     <nav>
         <ul class="nav-links">
             <li><a href="#" id="vision-mission-link">Vision, Mission, Core Values & Philosophy</a></li>
