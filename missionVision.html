@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isang Diwa</title>
+    <title>Mission & Vision</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap">
-    <style>
+</head>
+<style>
         body {
             font-family: 'Montserrat', sans-serif;
             background: #fbfae2;
@@ -34,14 +35,15 @@
             align-items: center;
         }
 
-        .header-left img,
-        .header-right img {
-            width: 80px;
+        .header-left img {
+            width: 160px;
             height: auto;
             margin-right: 15px;
         }
 
         .header-right img {
+            width: 160px;
+            height: auto;
             margin-left: 15px;
         }
 
@@ -51,7 +53,7 @@
             text-align: center;
             padding: 2rem;
             width: 100%;
-            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            box-sizing: border-box;
         }
 
         h1 {
@@ -60,38 +62,27 @@
             padding: 10px;
             margin: 10px 0;
             width: 100%;
-            font-weight: 600; /* Improved font weight */
-            cursor: pointer; /* Make the text clickable */
+            font-weight: 600;
+            cursor: pointer;
             transition: color 0.4s;
         }
 
         h1:hover {
-            color: gold; /* Change color on hover */
+            color: gold;
         }
 
         h2 {
+            color: #1d4d29;
+            font-weight: 600;
+            margin-bottom: 2rem;
             text-align: center;
-            font-size: 1.8rem;
-            color: #275e39;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: #9c870b;
-            margin-bottom: 10px;
-        }
-
-        h2:hover,
-        h3:hover {
-            color: #9c870b; /* Change color when hovered */
-            cursor: pointer;
         }
 
         nav {
-            background: #275e39; /* Darker green for a distinct header look */
+            background: #275e39;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            box-sizing: border-box;
         }
 
         nav ul {
@@ -103,7 +94,7 @@
             flex-wrap: wrap;
             background: #98862a;
             width: 100%;
-            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+            box-sizing: border-box;
         }
 
         nav ul li {
@@ -115,86 +106,123 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease; /* Smooth transition for color change */
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #27ae60; /* Change color to green on hover */
+            color: #27ae60;
         }
 
         section {
             width: 100%;
+            max-width: 800px;
             padding: 2rem;
-            border-bottom: 1px solid #ccc;
-            box-sizing: border-box; /* Ensure padding doesn't exceed the width */
-        }
-
-        section:last-of-type {
-            border-bottom: none;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            box-sizing: border-box;
         }
 
         section p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 25px;
+            color: #333;
+            margin-bottom: 1.5rem;
         }
 
-        .core-values h3 {
-            color: #9c870b;
+        section a {
+            color: #275e39;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        section a:hover {
+            color: #27ae60;
+        }
+
+        footer {
+            margin-top: 2rem;
+        }
+
+        /* Mobile responsive design */
+        @media (max-width: 768px) {
+            section {
+                width: 90%;
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
-    <script>
-        function navigateTo(page) {
-            window.location.href = page;
-        }
+<script>
+    function navigateTo(page) {
+        window.location.href = page;
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('newsletter-form-link').addEventListener('click', function() {
-                navigateTo('newsletterApplication.html');
-            });
-            document.getElementById('newspaper-archive-link').addEventListener('click', function() {
-                navigateTo('newspaperArchive.html');
-            });
-            document.getElementById('about-us-link').addEventListener('click', function() {
-                navigateTo('aboutUs.html');
-            });
-            document.getElementById('contact-us-link').addEventListener('click', function() {
-                navigateTo('contactUs.html');
-            });
-            document.getElementById('privacy-policy-link').addEventListener('click', function() {
-                navigateTo('privacyPolicy.html');
-            });
-            document.getElementById('feedback-link').addEventListener('click', function() {
-                navigateTo('feedback.html');
-            });
-            document.getElementById('makata-series-link').addEventListener('click', function() {
-                navigateTo('makataSeries.html');
-            });
-            document.getElementById('poet-series-link').addEventListener('click', function() {
-                navigateTo('poetSeries.html');
-            });
-            document.querySelector('h1').addEventListener('click', function() {
-                navigateTo('Main.html');
-            });
+    function toggleMenu() {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        menuIcon.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.menu-icon').addEventListener('click', toggleMenu);
+        document.getElementById('vision-mission-link').addEventListener('click', function() {
+            navigateTo('missionVision.html');
         });
-    </script>
-</head>
+        document.getElementById('newsletter-form-link').addEventListener('click', function() {
+            navigateTo('newsletterApplication.html');
+        });
+        document.getElementById('newsletter-archive-link').addEventListener('click', function() {
+            navigateTo('newspaperArchive.html');
+        });
+        document.getElementById('about-us-link').addEventListener('click', function() {
+            navigateTo('aboutUs.html');
+        });
+        document.getElementById('contact-us-link').addEventListener('click', function() {
+            navigateTo('contactUs.html');
+        });
+        document.getElementById('privacy-policy-link').addEventListener('click', function() {
+            navigateTo('privacyPolicy.html');
+        });
+        document.getElementById('feedback-link').addEventListener('click', function() {
+            navigateTo('feedback.html');
+        });
+        document.getElementById('makata-series-link').addEventListener('click', function() {
+            navigateTo('makataSeries.html');
+        });
+        document.getElementById('poet-series-link').addEventListener('click', function() {
+            navigateTo('poetSeries.html');
+        });
+    });
+</script>
+
 <body>
     <header>
         <div class="header-left">
-            <img src="images/UCC_collegedept_logo.png" alt="College Department Logo">
             <img src="images/Secondary_logo.png" alt="UCC Logo">
+            <img src="images/UCC_collegedept_logo.png" alt="College Department Logo">
         </div>
         <h1>Isang Diwa - Your Story, Your Voice</h1>
         <div class="header-right">
             <img src="images/Isang_diwa.png" alt="Isang Diwa Logo">
         </div>
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
-
     <nav>
         <ul class="nav-links">
+            <li><a href="#" id="vision-mission-link">Vision, Mission, Core Values & Philosophy</a></li>
             <li><a href="#" id="newsletter-form-link">Newsletter Application Form</a></li>
-            <li><a href="#" id="newspaper-archive-link">Newspaper Archive</a></li>
+            <li><a href="#" id="newsletter-archive-link">Newsletter Archive</a></li>
             <li><a href="#" id="makata-series-link">Makata Series</a></li>
             <li><a href="#" id="poet-series-link">Poet Series</a></li>
             <li><a href="#" id="feedback-link">Feedback</a></li>
@@ -203,35 +231,36 @@
             <li><a href="#" id="contact-us-link">Contact Us</a></li>
         </ul>
     </nav>
-
+    <header>
+        <h1>Vision, Mission, Core Values & Philosophy</h1>
+    </header>
     <section>
         <h2>Mission</h2>
-        <p>To be the most loved and admired Christian educational institution in the Philippines in 2050.</p>
-    </section>
-
-    <section>
-        <h2>Vision</h2>
+        <p> To be the most loved and admired Christian educational institution in the Philippines in 2050.
+        
+        <h2><b>Vision</b></h2>    
         <p>Instill knowledge and Christian values in achieving academic excellence and developing globally competitive leaders who will contribute significant impact to society.</p>
-    </section>
-
-    <section>
+        
         <h2>Core Values</h2>
-        <div class="core-values">
-            <h3>Live with Faith</h3>
-            <p>At UCC, we believe in the profound importance of embracing our Christian calling to prioritize integrating faith and knowledge to empower our students. Through a deliberate focus on Christian principles, we foster an environment where individuals can grow and flourish. This integration equips our students with the foundation for leadership, instilling values of integrity and compassion to navigate challenges with faith and clarity.</p>
-            <h3>Pursue excellence</h3>
-            <p>At UCC, we understand that excellence is not achieved by chance; it's the result of continuous effort and a commitment to nothing short of our best. By upholding standards of excellence in all our endeavors, we honor the opportunities bestowed upon us by the Divine. In doing so, we not only serve God but also fulfill our duty to uplift and serve our fellow human beings with distinction and integrity.</p>
-            <h3>Growth Mindset</h3>
-            <p>At UCC, we wholeheartedly believe in fostering self-determination through education. Embracing a growth mindset means recognizing that our intelligence, creativity, character, and strengths are cultivated through dedication, perseverance, and continuous learning. We aim to empower students, faculty, and staff not only to succeed during their time with us but also to flourish long after graduation or their next pursuits. By nurturing such a culture, we are better equipped to support individuals in their journey to become lifelong learners, continually expanding their knowledge and honing their skills.</p>
-            <h3>Serve</h3>
-            <p>At UCC, we embrace the notion of contributing to a greater purpose beyond ourselves. Our administration, faculty, and staff recognize the significance of sustaining not only our campus but also our local and global communities. Through various avenues such as leadership opportunities, community engagement, service learning, and volunteerism, we empower and encourage students to extend their impact beyond our institution's walls. We believe in cultivating active citizenship, inspiring students to initiate positive change, lead progress, and ultimately make a meaningful difference in the world.</p>
-            <h3>Make a difference</h3>
-            <p>At UCC, we're committed to making a difference on local, national, and global scales. Through collaborative partnerships and impactful international engagements, we mobilize our intellectual resources to drive societal advancements. By offering thought leadership, we aim to elevate our profile and influence, speaking to the world and effecting positive change.</p>
-        </div>
-    </section>
 
+        <h3>Live with Faith</h3>
+        <p>At UCC, we believe in the profound importance of embracing our Christian calling to prioritize integrating faith and knowledge to empower our students. Through a deliberate focus on Christian principles, we foster an environment where individuals can grow and flourish. This integration equips our students with the foundation for leadership, instilling values of integrity and compassion to navigate challenges with faith and clarity.</p>
+
+        <h3>Pursue excellence</h3>
+        <p>At UCC, we understand that excellence is not achieved by chance; it's the result of continuous effort and a commitment to nothing short of our best. By upholding standards of excellence in all our endeavors, we honor the opportunities bestowed upon us by the Divine. In doing so, we not only serve God but also fulfill our duty to uplift and serve our fellow human beings with distinction and integrity.</p>
+
+        <h3>Growth Mindset</h3>
+        <p>At UCC, we wholeheartedly believe in fostering self-determination through education. Embracing a growth mindset means recognizing that our intelligence, creativity, character, and strengths are cultivated through dedication, perseverance, and continuous learning.  We aim to empower students, faculty, and staff not only to succeed during their time with us but also to flourish long after graduation or their next pursuits. By nurturing such a culture, we are better equipped to support individuals in their journey to become lifelong learners, continually expanding their knowledge and honing their skills. </p>
+
+        <h3>Serve</h3>
+        <p>At UCC, we embrace the notion of contributing to a greater purpose beyond ourselves. Our administration, faculty, and staff recognize the significance of sustaining not only our campus but also our local and global communities. Through various avenues such as leadership opportunities, community engagement, service learning, and volunteerism, we empower and encourage students to extend their impact beyond our institution's walls. We believe in cultivating active citizenship, inspiring students to initiate positive change, lead progress, and ultimately make a meaningful difference in the world.
+        </p>
+
+        <h3>Make a difference</h3>
+        <p>At UCC, we're committed to making a difference on local, national, and global scales. Through collaborative partnerships and impactful international engagements, we mobilize our intellectual resources to drive societal advancements. By offering thought leadership, we aim to elevate our profile and influence, speaking to the world and effecting positive change.</p>
+    </section>
     <footer>
-        <p>&copy; 2025 Isang Diwa. All rights reserved.</p>
+        <p>&copy; <b>2025 Isang Diwa. All rights reserved.</b></p>
     </footer>
 </body>
 </html>
